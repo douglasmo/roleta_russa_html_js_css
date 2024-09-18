@@ -1,0 +1,148 @@
+/* Reset de Estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do Corpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f7, #d9e2ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Principal */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2em;
+}
+
+/* Seção de Entrada */
+.input-section {
+    margin-bottom: 25px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    resize: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Botões */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background: #2980b9;
+}
+
+.spin-btn {
+    background: #e74c3c;
+}
+
+.spin-btn:hover:not(:disabled) {
+    background: #c0392b;
+}
+
+.generate-btn {
+    background: #2ecc71;
+}
+
+.generate-btn:hover:not(:disabled) {
+    background: #27ae60;
+}
+
+/* Container da Roleta */
+.roulette-container {
+    position: relative;
+    margin: 0 auto 25px;
+    width: 500px;
+    height: 500px;
+}
+
+.roulette-container canvas {
+    border-radius: 50%;
+    border: 5px solid #3498db;
+}
+
+/* Seta Indicadora */
+.arrow {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #e74c3c;
+    z-index: 2;
+}
+
+/* Resultado */
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .roulette-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .roulette-container canvas {
+        width: 300px;
+        height: 300px;
+    }
+
+    .arrow {
+        border-right: 15px solid #e74c3c;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        left: -15px;
+    }
+}
